@@ -5,13 +5,19 @@ import App from './App';
 import Home from './Home/Home.js';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import Header from './Header/Header';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-        <Route path="/" component={App} exact />
-        <Route path="/about" component={Home} />
-    </Router>
+    <div>
+      <Header />
+    </div>
+    <div>
+        <Router>
+            <Route path="/" component={App} exact />
+            <Route path="/about" component={Home} />
+        </Router>
+    </div>
   </React.StrictMode>,
   document.getElementById('root')
 );

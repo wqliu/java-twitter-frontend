@@ -1,0 +1,29 @@
+.Header-body{
+    height: 125px;
+    margin-top: 0px;
+}
+
+p{
+    margin-top: 0px;
+}
+
+.header-line{
+    height: 90px;
+}
+
+.vertical-center {
+    height: 90px;
+    line-height: 90px;
+    text-align: center;
+}
+
+.logo{
+    float: left;
+    width: 20%;
+}
+
+.search-bar-area{
+    float: left;
+    width: 40%;
+}
+
