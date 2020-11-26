@@ -4,22 +4,18 @@ import './index.css';
 import App from './App';
 import Home from './Home/Home.js';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
 import Header from './Header/Header';
 
 ReactDOM.render(
   <React.StrictMode>
-    <div>
       <Router>
-          <Header />
-      </Router>
-    </div>
-    <div>
-        <Router>
+        <Header />
+        <Switch>
             <Route path="/" component={App} exact />
-            <Route path="/about" component={Home} />
-        </Router>
-    </div>
+            <Route path="/real-estate/:area" component={Home} />
+        </Switch>
+      </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );

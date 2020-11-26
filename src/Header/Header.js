@@ -32,12 +32,8 @@ class Header extends React.Component {
     }
 
     render(){
-        if (this.state.redirect) {
-            const url = this.cleanUrl(this.state.category) + '/' + this.cleanUrl(this.state.area);
-            //const url = "somewhere";
-            return <Redirect to={url} />;
-        }
-        return (
+        const result = [];
+        result.push(
             <div className="Header-body">
                 <div className="header-line">
                     <div className="vertical-center logo">
@@ -72,6 +68,11 @@ class Header extends React.Component {
                 </div>
             </div>
         );
+        if (this.state.redirect) {
+            const url = '/' + this.cleanUrl(this.state.category) + '/' + this.cleanUrl(this.state.area);
+            result.push(<Redirect to={url} />);
+        }
+        return result;
     }
 }
 
