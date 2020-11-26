@@ -10,7 +10,9 @@ import Header from './Header/Header';
 ReactDOM.render(
   <React.StrictMode>
     <div>
-      <Header />
+      <Router>
+          <Header />
+      </Router>
     </div>
     <div>
         <Router>

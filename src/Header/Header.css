@@ -24,6 +24,19 @@ p{
 
 .search-bar-area{
     float: left;
-    width: 40%;
+    width: 50%;
 }
 
+.search-bar-selection{
+    height: 46px;
+}
+
+.search-bar{
+    width: 40%;
+    height: 40px;
+}
+
+.login-area{
+    float: left;
+    width: 30%;
+}
