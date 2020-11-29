@@ -68,13 +68,18 @@ const geographic_area = {
 };
 
 const category = {
-    "Buy & Sell":{},
-    "Cars & Vehicles":{},
-    "Real Estate":{}, 
-    "Services":{},
-    "Pets":{},
-    "Jobs":{},
-    "Community":{}
+    "All Categories":{
+        "Buy & Sell":{},
+        "Cars & Vehicles":{},
+        "Real Estate":{
+            "For Sale":{},
+            "For Rent":{}
+        }, 
+        "Services":{},
+        "Pets":{},
+        "Jobs":{},
+        "Community":{}
+    }
 };
 
 module.exports = {"geographic_area":geographic_area, "category":category};

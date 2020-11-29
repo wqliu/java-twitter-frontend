@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Home from './Home/Home.js';
+import RealEstate from './RealEstate/RealEstate.js';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
 import Header from './Header/Header';
@@ -13,7 +13,7 @@ ReactDOM.render(
         <Header />
         <Switch>
             <Route path="/" component={App} exact />
-            <Route path="/real-estate/:area" component={Home} />
+            <Route path="/real-estate/:area" component={RealEstate} />
         </Switch>
       </Router>
   </React.StrictMode>,
