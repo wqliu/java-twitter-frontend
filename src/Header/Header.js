@@ -72,9 +72,9 @@ class Header extends React.Component {
         const result = [];
         const rec_options = [];
         for(let i=0;i<this.state.recommended_options.length;i++){
-            rec_options.push(<a href="true" className="recommended-options-link" onClick={()=>{this.setCategoryValue(this.state.recommended_options[i])}}>{this.state.recommended_options[i]}</a>);
+            rec_options.push(<a className="recommended-options-link" onClick={()=>{this.setCategoryValue(this.state.recommended_options[i])}}>{this.state.recommended_options[i]}</a>);
         }
-        rec_options.push(<a href="true" className="recommended-options-link" onClick={()=>{this.setCategoryValue("All Categories")}}>Main Page</a>);
+        rec_options.push(<a className="recommended-options-link" onClick={()=>{this.setCategoryValue("All Categories")}}>Main Page</a>);
         result.push(
             <div className="Header-body">
                 <div className="header-line">
