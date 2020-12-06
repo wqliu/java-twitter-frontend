@@ -26,7 +26,10 @@ class ForRent extends React.Component {
             bedsandbathsModalIsOpen:false,
             hometypeModalIsOpen:false,
             minPrice:0,
-            maxPrice:0
+            maxPrice:10000,
+            numOfBedrooms:0,
+            numOfBathrooms:0,
+            hometype:"Houses",
         }
         this.priceOpenModal = this.priceOpenModal.bind(this);
         this.priceCloseModal = this.priceCloseModal.bind(this);
@@ -38,6 +41,10 @@ class ForRent extends React.Component {
         this.hometypeCloseModal = this.hometypeCloseModal.bind(this);
         this.hometypeAfterOpenModal = this.hometypeAfterOpenModal.bind(this);
         this.handleMinPrice = this.handleMinPrice.bind(this);
+        this.handleMaxPrice = this.handleMaxPrice.bind(this);
+        this.handleNumOfBedrooms = this.handleNumOfBedrooms.bind(this);
+        this.handleNumOfBathrooms = this.handleNumOfBathrooms.bind(this);
+        this.handleHometype = this.handleHometype.bind(this);
     }
     priceOpenModal() {
         this.setState({priceModalIsOpen:true});
@@ -76,6 +83,23 @@ class ForRent extends React.Component {
     handleMinPrice(event){
         this.setState({minPrice: event.target.value});
     }
+
+    handleMaxPrice(event){
+        this.setState({maxPrice: event.target.value});
+    }
+
+    handleNumOfBedrooms(event){
+        this.setState({numOfBedrooms:event.target.value});
+    }
+
+    handleNumOfBathrooms(event){
+        this.setState({numOfBathrooms:event.target.value});
+    }
+
+    handleHometype(event){
+        this.setState({hometype:event.target.value});
+    }
+
     render(){
         return(
             <div>
@@ -90,7 +114,12 @@ class ForRent extends React.Component {
                         >    
                         <div>I am a price modal</div>
                         <form>
-                            <input type="text" value={this.state.minPrice} onChange={this.handleMinPrice}/>
+                            <label>min
+                                <input type="text" id="minPrice" value={this.state.minPrice} onChange={this.handleMinPrice}/>
+                            </label>
+                            <label>max
+                                <input type="text" id="maxPrice" value={this.state.maxPrice} onChange={this.handleMaxPrice}/>
+                            </label>
                             <input type="submit" value="Submit" />
                         </form>
                         <button onClick={this.priceCloseModal}>close</button>
@@ -104,15 +133,29 @@ class ForRent extends React.Component {
                             style={customStyles}
                             contentLabel="Example bedsandbaths Modal"
                         >    
-                        <button onClick={this.bedsandbathsCloseModal}>close</button>
+                        
                         <div>I am a bedsandbaths modal</div>
                         <form>
-                            <input />
-                            <button>tab navigation</button>
-                            <button>stays</button>
-                            <button>inside</button>
-                            <button>the modal</button>
+                            <label>
+                                Bedrooms
+                                <select value={this.state.numOfBedrooms} onChange={this.handleNumOfBedrooms}>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </label>
+                            <label>
+                                Bathrooms
+                                <select value={this.state.numOfBathrooms} onChange={this.handleNumOfBathrooms}>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </label>
                         </form>
+                        <button onClick={this.bedsandbathsCloseModal}>close</button>
                         </Modal>
                     </span>
                     <span>
@@ -123,15 +166,16 @@ class ForRent extends React.Component {
                             style={customStyles}
                             contentLabel="Example hometype Modal"
                         >    
-                        <button onClick={this.hometypeCloseModal}>close</button>
                         <div>I am a hometype modal</div>
                         <form>
-                            <input />
-                            <button>tab navigation</button>
-                            <button>stays</button>
-                            <button>inside</button>
-                            <button>the modal</button>
+                            <select value={this.state.hometype} onChange={this.handleHometype}>
+                                <option value="Houses">Houses</option>
+                                <option value="Condos">Condos</option>
+                                <option value="Apartments">Apartments</option>
+                                <option value="Townhouses">Townhouses</option>
+                            </select>
                         </form>
+                        <button onClick={this.hometypeCloseModal}>close</button>
                         </Modal>
                     </span>
                 </div>

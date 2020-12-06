@@ -5,7 +5,7 @@ import App from './App';
 import RealEstate from './RealEstate/RealEstate.js';
 import ForRent from './RealEstate/ForRent/ForRent.js';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Header from './Header/Header';
 
 ReactDOM.render(
@@ -14,7 +14,7 @@ ReactDOM.render(
         <Header />
         <Switch>
             <Route path="/" component={App} exact />
-            <Route path="/real-estate/:area" component={RealEstate} />
+            <Route path="/real-estate/:area" key="RealEstate" component={RealEstate} />
             <Route path="/for-rent/:area" component={ForRent} />
         </Switch>
       </Router>
